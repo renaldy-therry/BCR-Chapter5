@@ -1,0 +1,38 @@
+// Use DBML to define your database structure
+// Docs: https://www.dbml.org/docs
+
+Table Cars {
+  id integer
+  name string
+  size string
+  rent_per_day integer
+  image_id integer
+  createdByUser integer
+  lastUpdatedByUser integer
+  deletedByUser integer
+  createdAt date
+  updatedAt date
+  deletedAt date
+}
+
+Table Users {
+  id integer [primary key]
+  name string
+  email string
+  encryptedPassword string
+  role string
+}
+
+Table Images {
+  id integer [primary key]
+  id_public string
+  url string
+}
+
+Ref: Cars.image_id > Images.id
+
+Ref: Cars.createdByUser >= Users.id
+
+Ref: Cars.lastUpdatedByUser >= Users.id
+
+Ref: Cars.deletedByUser >= Users.id
