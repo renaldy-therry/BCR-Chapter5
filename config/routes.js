@@ -1,6 +1,6 @@
 const express = require("express");
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../docs/openapi.json');
+const swaggerDocument = require('../openapi.json');
 const controllers = require("../app/controllers");
 const upload = require("./upload")
 
