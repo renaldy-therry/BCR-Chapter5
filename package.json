@@ -4,13 +4,10 @@
   "description": "",
   "main": "app/index.js",
   "scripts": {
-    "start": "nodemon bin/www",
+   "start": "node bin/www",
     "develop": "nodemon -q bin/www",
-    "db:create": "./node_modules/.bin/sequelize-cli db:create",
-    "db:drop": "./node_modules/.bin/sequelize-cli db:drop",
-    "db:migrate": "./node_modules/.bin/sequelize-cli db:migrate",
-    "db:rollback": "./node_modules/.bin/sequelize-cli db:migrate:undo",
-    "db:seed": "./node_modules/.bin/sequelize-cli db:seed:all"
+    "db": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
+    "reseed": "sequelize db:seed:undo && sequelize db:seed:all"
   },
   "author": "",
   "license": "ISC",
